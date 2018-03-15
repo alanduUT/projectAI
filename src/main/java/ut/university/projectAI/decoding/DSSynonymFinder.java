@@ -25,7 +25,7 @@ public class DSSynonymFinder implements DSGeneralAnalyzer<Set<String>> {
 	private SentenceUnit<Set<String>> result;
 	private DSGeneralCache<String, Set<String>> synonymsCache = CacheDispenser.getSynonymsCache();
 	private static final Logger logger = Logger.getLogger(DSSynonymFinder.class.getName());
-	private static final String THESAURUS_API_KEY = "5c4684a65e8ab0b05ff5feebab78a22f";
+	private static final String THESAURUS_API_KEY = "854f27ee1dc32d65790994fe6bc439b7";
 	private static final String THESAURUS_URI = "http://words.bighugelabs.com/api/2/";
 	private String CUR_THREAD;
 	

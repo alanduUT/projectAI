@@ -1,4 +1,4 @@
-package ut.university.projectAI.decoding;
+package ut.university.projectAI;
 
 import java.io.BufferedInputStream;
 import ut.university.projectAI.processor.MainProcessor;

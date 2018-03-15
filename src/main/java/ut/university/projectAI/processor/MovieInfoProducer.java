@@ -21,6 +21,7 @@ public class MovieInfoProducer {
 	private final SentenceUnit<Tokens> unit;
 	private final DSGeneralCache<String, Movie> moviesCache = CacheDispenser.getMoviesCache();
 	private static final String OMDBAPI_URI = "http://www.omdbapi.com/?t=";
+	private static final String OMDBAPI_KEY = "&apikey=b0a61ee";
 	private List<Movie> notFoundMovies = new ArrayList<>();
 	private List<Movie> filledMovies = new ArrayList<>();
 	private static final Logger logger = Logger.getLogger(MovieInfoProducer.class.getName());
@@ -95,7 +96,7 @@ public class MovieInfoProducer {
 	
 	private Movie fillAndCacheMovie(Movie mov){
 		RequestPerformer rp = RequestPerformerImpl.instance();
-		return processResponse(rp.performRequest(OMDBAPI_URI + String.join("+", mov.getCacheName().split("\\s"))), mov);
+		return processResponse(rp.performRequest(OMDBAPI_URI + String.join("+", mov.getCacheName().split("\\s")) + OMDBAPI_KEY), mov);
 	}
 	
 	private Movie processResponse(String response, Movie mov){
